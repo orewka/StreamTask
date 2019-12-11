@@ -9,6 +9,7 @@ import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -46,7 +47,13 @@ public class PupilTask {
         //        pupilStream.collect(Collectors.groupingBy(n->n.getBirth().getYear(), Collectors.toList()));
         // System.out.println(map5);
         // 6. Убрать учеников с одинаковыми именами, имена и дату рождения оставшихся вывести в консоль
-        // 7. Отсортировать по полу, потом по дате рождения, потом по имени (в обратном порядке), собрать в список (List)
+        // pupilStream.collect(Collectors.groupingBy(Pupil::getName))
+        //        .entrySet()
+        //        .parallelStream()
+        //        .filter(n -> n.getValue().size() == 1)
+        //        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue))
+        //        .forEach((key, value) -> System.out.println(value.get(0).getName() + " " + value.get(0).getBirth()));
+        // 7. Отсортироват   ь по полу, потом по дате рождения, потом по имени (в обратном порядке), собрать в список (List)
         // pupilStream.sorted(Comparator.comparing(Pupil::getGender).thenComparing(Pupil::getBirth)
         //        .thenComparing((n1,n2)->n2.getName().compareTo(n1.getName())))
         //        .collect(Collectors.toList())
